@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>GeoJSON Marker from URL</title>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+<style>
+    #state {
+        position:absolute;
+        top:10px;
+        right:10px;
+        background:#fff;
+        font-size:30px;
+        padding:10px;
+        z-index:999;
+    }
+</style>
+
+<script src='js/leaflet-pip.js'></script>
+<script src='js/jquery-2.1.0.js'></script>
+
+<div id='map'></div>
+<div id='state'></div>
+
+<script>
+    var serverIp = getContextPath(window.location);
+    var appName = getAppName(window.location);
+
+    if(appName.indexOf(".")) {
+        appName = "";
+    }
+    function getContextPath(location) {
+        var hostname = location.hostname;
+        var retString = location.protocol + "//" + location.hostname;
+        if(location.port != null) {
+            retString += ":" + location.port;
+        }
+        return retString;
+    }
+    function getAppName(location) {
+        var arr = location.pathname.split("/", 2);
+        //alert(arr);
+        var temp = arr.toString();
+        return temp.replace(",", "");
+    }
+    function getQueryVariable(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return("");
+    }
+    var geoJsonSrc = serverIp + "/" + appName + "/featurecollection/1.json?view=" + getQueryVariable("view");
+
+    // As with any other AJAX request, this technique is subject to the Same Origin Policy:
+    // http://en.wikipedia.org/wiki/Same_origin_policy
+    // So the CSV file must be on the same domain as the Javascript, or the server
+    // delivering it should support CORS.
+
+    var map = L.mapbox.map('map', 'examples.map-9ijuk24y')
+            .setView([38.90, -77.03], 11);
+
+    var iconURL = "";
+    if(getQueryVariable("view") == 'villain') {
+        iconURL = 'https://s3.amazonaws.com/uploads.hipchat.com/100416/737096/VkSx0RzGSrRJxxl/upload.png';
+    } else {
+        iconURL = 'images/house.png';
+    }
+
+    var featureLayer = L.mapbox.featureLayer()
+                                .on('layeradd', function(e) {
+                                    var marker = e.layer,
+                                    feature = marker.feature;
+                                    if(feature.geometry.type == "Point") {
+                                        marker.setIcon(L.icon({
+                                            iconUrl: iconURL,
+                                            iconSize: [50, 50]
+                                        }));
+                                    }
+                                })
+                                .loadURL(geoJsonSrc)
+                                .addTo(map);
+
+
+    featureLayer.on('ready', function() {
+        // featureLayer.getBounds() returns the corners of the furthest-out markers,
+        // and map.fitBounds() makes sure that the map contains these.
+        map.fitBounds(featureLayer.getBounds());
+    });
+
+
+//    var customLayer = L.mapbox.featureLayer().addTo(map);
+//
+//    // Set a custom icon on each marker based on feature properties
+//    customLayer.on('layeradd', function(e) {
+//        var marker = e.layer,
+//        feature = marker.feature;
+//
+//        marker.setIcon(L.icon({
+//            iconUrl: 'images/house.png',
+//            iconSize: [25, 25]
+//        }));
+//    });
+
+    // Add features to the map
+//    customLayer.setGeoJSON(geoJson);
+
+//    $.ajax({
+//        url: geoJsonSrc ,
+//        dataType: 'json',
+//        success: function load(d) {
+//
+//            customLayer.setGeoJSON(d);
+//
+////            var states = L.geoJson(d).addTo(map);
+////            L.marker([38, -102], {
+////                icon: L.icon({
+////                    iconUrl: 'images/house.png',
+////                    iconSize: [25, 25]
+////                }),
+////                draggable: true
+////            }).addTo(map)
+//
+////            .on('dragend', function(e) {
+////                var layer = leafletPip.pointInLayer(this.getLatLng(), states, true);
+////                document.getElementById('state').innerHTML = layer.length ?
+////                        layer[0].feature.properties.name : '';
+////            });
+//        }
+//    });
+
+</script>
+</body>
+</html>

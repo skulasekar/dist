@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * (c) 2013-14 Cable Television Laboratories, Inc. All rights reserved.  Proprietary and Confidential.
+ * $Author$
+ * $Date$
+ * Description: Spring Framework Configuration File. 
+ * $Revision$ 
+ */
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:cxf="http://cxf.apache.org/core"
+       xmlns:addressing="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-2.5.xsd
+	http://cxf.apache.org/jaxrs
+	http://cxf.apache.org/schemas/jaxrs.xsd
+	http://cxf.apache.org/core
+	http://cxf.apache.org/schemas/core.xsd">
+	
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+	
+	<bean id="exceptionMapper" class="com.cablelabs.wasapi.exceptions.ScExceptionMapper" />
+	
+	<!--<bean id="accountDelegate" class="com.cablelabs.wasapi.delegates.account.AccountDelegate">
+		<property name="accountAdapter" ref="accountAdapter" />
+		<property name="messageResponse" ref="messageResponse" />
+		<property name="restResponse" ref="restResponse" />
+	</bean>-->
+
+    <!-- These have been added to RAML -->
+	<bean id="customerAccountService" class="com.cablelabs.cableapi.facades.CustomerAccountFacadeImpl" />
+    <bean id="customerService" class="com.cablelabs.cableapi.facades.CustomerFacadeImpl"></bean>
+    <bean id="preferenceService" class="com.cablelabs.cableapi.facades.PreferenceFacadeImpl" />
+    <bean id="telephoneNumberService" class="com.cablelabs.cableapi.facades.TelephoneNumberFacadeImpl"></bean>
+    <bean id="faxNumberService" class="com.cablelabs.cableapi.facades.FaxNumberFacadeImpl"></bean>
+    <bean id="emailContactService" class="com.cablelabs.cableapi.facades.EmailContactFacadeImpl"></bean>
+    <bean id="postalContactService" class="com.cablelabs.cableapi.facades.PostalContactFacadeImpl"></bean>
+    <bean id="systemContactService" class="com.cablelabs.cableapi.facades.SystemContactFacadeImpl"></bean>
+    <bean id="userService" class="com.cablelabs.cableapi.facades.UserFacadeImpl"></bean>
+    <bean id="contactService" class="com.cablelabs.cableapi.facades.ContactFacadeImpl"></bean>
+    <bean id="paymentPlanService" class="com.cablelabs.cableapi.facades.PaymentPlanFacadeImpl"></bean>
+    <bean id="individualService" class="com.cablelabs.cableapi.facades.IndividualFacadeImpl"></bean>
+    <bean id="organizationService" class="com.cablelabs.cableapi.facades.OrganizationFacadeImpl"></bean>
+    <bean id="productService" class="com.cablelabs.cableapi.facades.ProductFacadeImpl"></bean>
+    <bean id="productSpecificationService" class="com.cablelabs.cableapi.facades.ProductSpecificationFacadeImpl"></bean>
+    <!-- End-->
+
+
+    <bean id="customerBillSpecService" class="com.cablelabs.cableapi.facades.CustomerBillSpecFacadeImpl"></bean>
+    <bean id="prodPriceChargeService" class="com.cablelabs.cableapi.facades.ProdPriceChargeFacadeImpl"></bean>
+    <bean id="fundsTransferService" class="com.cablelabs.cableapi.facades.FundsTransferFacadeImpl"></bean>
+    <bean id="paymentCardService" class="com.cablelabs.cableapi.facades.PaymentCardFacadeImpl"></bean>
+    <bean id="tokenizedPaymentCardService" class="com.cablelabs.cableapi.facades.TokenizedPaymentCardFacadeImpl"></bean>
+    <bean id="tokenizedThirdPartyService" class="com.cablelabs.cableapi.facades.TokenizedThirdPartyFacadeImpl"></bean>
+
+    <bean id="propertyAddressService" class="com.cablelabs.cableapi.facades.PropertyAddressFacadeImpl"></bean>
+    <bean id="bundledProductOfferingService" class="com.cablelabs.cableapi.facades.BundledProductOfferingFacadeImpl"></bean>
+    <bean id="customerfacingService" class="com.cablelabs.cableapi.facades.CustomerFacingFacadeImpl"></bean>
+    <bean id="americanPropertyAddressService" class="com.cablelabs.cableapi.facades.AmericanPropertyAddressFacadeImpl"></bean>
+    <bean id="serviceSiteService" class="com.cablelabs.cableapi.facades.ServiceSiteFacadeImpl"></bean>
+    <bean id="geographicAddressService" class="com.cablelabs.cableapi.facades.GeographicAddressFacadeImpl"></bean>
+    <bean id="productOfferingService" class="com.cablelabs.cableapi.facades.ProductOfferingFacadeImpl"></bean>
+    <bean id="customerBillService" class="com.cablelabs.cableapi.facades.CustomerBillFacadeImpl"></bean>
+    <bean id="documentService" class="com.cablelabs.cableapi.facades.DocumentFacadeImpl"></bean>
+    <bean id="propertyService" class="com.cablelabs.cableapi.facades.PropertyFacadeImpl"></bean>
+    <bean id="featureService" class="com.cablelabs.cableapi.facades.FeatureFacadeImpl"></bean>
+    <bean id="featureCollectionService" class="com.cablelabs.cableapi.facades.FeatureCollectionFacadeImpl"></bean>
+    <bean id="appliedcustomerbillingrateService" class="com.cablelabs.cableapi.facades.AppliedCustomerBillingRateFacadeImpl"></bean>
+    <bean id="appliedcustomerbillingtelephoneusagerate" class="com.cablelabs.cableapi.facades.AppliedCustomerBillingTelephoneUsageRateFacadeImpl"></bean>
+    <bean id="appliedcustomerbillingvideousagerate" class="com.cablelabs.cableapi.facades.AppliedCustomerBillingVideoUsageRateFacadeImpl"></bean>
+    <bean id="appliedCustomerBillingAdjustment" class="com.cablelabs.cableapi.facades.AppliedCustomerBillingAdjustmentImpl"></bean>
+    <bean id="appliedCustomerBillingTaxRate" class="com.cablelabs.cableapi.facades.AppliedCustomerBillingTaxRateFacadeImpl"></bean>
+    <bean id="recurringAppliedCustomerBillingProductCharge" class="com.cablelabs.cableapi.facades.RecurringAppliedCustomerBillingProductChargeFacadeImpl"></bean>
+    <bean id="appliedCustomerBillingrefund" class="com.cablelabs.cableapi.facades.AppliedCustomerBillingRefundFacadeImpl"></bean>
+    <bean id="oneTimeAppliedCustomerBillingProductCharge" class="com.cablelabs.cableapi.facades.OneTimeAppliedCustomerBillingProductChargeFacadeImpl"></bean>
+    <!-- Device Services -->
+    <bean id="deviceService" class="com.cablelabs.cableapi.facades.DeviceFacadeImpl"></bean>
+
+    <bean id="cableServiceArea" class="com.cablelabs.cableapi.facades.CableServiceAreaFacadeImpl"></bean>
+    <bean id="userCredentialService" class="com.cablelabs.cableapi.facades.UserCredentialFacadeImpl"></bean>
+
+
+    <!--<bean id="accountAdapter" class="com.cablelabs.wasapi.adapters.account.AccountAdapter">
+    </bean>-->
+	
+	<bean id="messageResponse"
+		class="com.cablelabs.wasapi.delegates.responseCodes.MessageResponse">
+	</bean>
+	<bean id="restResponse"
+		class="com.cablelabs.wasapi.delegates.responseCodes.RestResponse">
+	</bean>
+	
+	<bean id="cors-filter"
+		class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter">
+		<property name="allowOrigins">
+			<list>
+				<value>http://sc-test.cablelabs.com:8080</value>
+				<value>http://sc-sandbox5.cablelabs.com:8080</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!--<bean id="allowOrigins" class="com.cablelabs.cableapi.facades.PreferenceImpl">
+		<property name="allowedOrigins">
+			<list>
+				<value>http://sc-test.cablelabs.com:8080</value>
+				<value>http://sc-sandbox5.cablelabs.com:8080</value>
+			</list>
+		</property>
+	</bean>-->
+	
+	<util:map id="jsonNamespaceMap" map-class="java.util.Hashtable">
+		<entry key="http://www.w3.org/2001/XMLSchema-instance" value="e" />
+		<entry key="http://cxf.apache.org/bindings/xformat" value="cxf" />
+	</util:map>
+	
+	<!--<bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">-->
+		<!--<property name="ignoreNamespaces" value="true" />-->
+	<!--</bean>-->
+    <!--<bean id="jsonProvider1" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider">-->
+	<!--</bean>-->
+    <!--<bean id="jsonProvider1" class="org.codehaus.jackson.jaxrs.JacksonJsonProvider">-->
+	<!--</bean>-->
+    <!--<bean id="jsonProvider2" class="com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider">-->
+    <!--</bean>-->
+
+    <!-- Extends com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider and customizes serialization and
+         deserialization settings.
+    -->
+
+    <bean id="customJsonProvider" class="com.cablelabs.cableapi.utils.jsonmapper.CustomJsonProvider">
+    </bean>
+
+	<bean id="jaxbElementProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider">
+	</bean>
+	
+	<jaxrs:server id="APIServer" address="/" staticSubresourceResolution="true">
+		<jaxrs:serviceBeans>
+            <ref bean="preferenceService" />
+            <ref bean="telephoneNumberService" />
+            <ref bean="emailContactService" />
+            <ref bean="faxNumberService" />
+            <ref bean="postalContactService" />
+            <ref bean="systemContactService" />
+            <ref bean="contactService" />
+            <ref bean="propertyAddressService"/>
+            <ref bean="americanPropertyAddressService"/>
+            <ref bean="deviceService" />
+            <ref bean="customerBillService" />
+            <ref bean="documentService" />
+
+            <ref bean="customerService" />
+            <ref bean="userService" />
+            <ref bean="individualService" />
+            <ref bean="organizationService" />
+            <ref bean="paymentPlanService" />
+            <ref bean="fundsTransferService"/>
+            <ref bean="paymentCardService"/>
+            <ref bean="tokenizedPaymentCardService"/>
+            <ref bean="tokenizedThirdPartyService"/>
+            <ref bean="serviceSiteService" />
+            <ref bean="geographicAddressService" />
+            <ref bean="productOfferingService" />
+            <ref bean="propertyService" />
+            <ref bean="featureService" />
+            <ref bean="featureCollectionService" />
+            <ref bean="appliedcustomerbillingrateService"/>
+            <ref bean="appliedcustomerbillingtelephoneusagerate" />
+            <ref bean="appliedcustomerbillingvideousagerate" />
+            <ref bean="appliedCustomerBillingAdjustment"/>
+            <ref bean="appliedCustomerBillingTaxRate" />
+            <ref bean="recurringAppliedCustomerBillingProductCharge" />
+            <ref bean="appliedCustomerBillingrefund" />
+            <ref bean="oneTimeAppliedCustomerBillingProductCharge" />
+            <ref bean="cableServiceArea" />
+            <ref bean="userCredentialService" />
+            <ref bean="customerAccountService" />
+            <ref bean="customerBillSpecService"/>
+            <ref bean="productService"/>
+            <ref bean="prodPriceChargeService"/>
+            <ref bean="productSpecificationService"/>
+            <ref bean="bundledProductOfferingService"/>
+            <ref bean="customerfacingService" />
+
+
+        </jaxrs:serviceBeans>
+		
+		<jaxrs:providers>
+			<ref bean="cors-filter" />
+			<ref bean="exceptionMapper" />
+			<ref bean="customJsonProvider" />
+		</jaxrs:providers>
+		
+		<jaxrs:extensionMappings>
+			<entry key="json" value="application/json" />
+			<entry key="xml" value="application/xml" />
+            <entry key="html" value="application/html" />
+		</jaxrs:extensionMappings>
+		
+	</jaxrs:server>
+
+    <!--<jaxrs:server id="WorkInProgressServer" address="/wip">-->
+        <!--<jaxrs:serviceBeans>-->
+            <!--<ref bean="paymentPlanService" />-->
+            <!--<ref bean="contactService" />-->
+            <!--<ref bean="customerBillSpecService"/>-->
+            <!--<ref bean="productService"/>-->
+            <!--<ref bean="productSpecificationService"/>-->
+
+        <!--</jaxrs:serviceBeans>-->
+
+        <!--<jaxrs:providers>-->
+            <!--<ref bean="cors-filter" />-->
+            <!--<ref bean="exceptionMapper" />-->
+            <!--<ref bean="jsonProvider" />-->
+        <!--</jaxrs:providers>-->
+
+        <!--<jaxrs:extensionMappings>-->
+            <!--<entry key="json" value="application/json" />-->
+            <!--<entry key="xml" value="application/xml" />-->
+        <!--</jaxrs:extensionMappings>-->
+
+    <!--</jaxrs:server>-->
+
+</beans>

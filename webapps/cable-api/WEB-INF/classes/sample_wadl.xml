@@ -1,0 +1,1548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml-stylesheet type="text/xsl" href="wadl2raml.xsl"?>-->
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <grammars>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+            elementFormDefault="unqualified">
+            <xs:element name="BillingPeriod" type="billingPeriod"/>
+            <xs:element name="BundledProductOffering" type="bundledProductOffering"/>
+            <xs:element name="CharacteristicValue" type="characteristicValue"/>
+            <xs:element name="CompositeProdPrice" type="compositeProdPrice"/>
+            <xs:element name="CompositeProductSpecification" type="compositeProductSpecification"/>
+            <xs:element name="Contact" type="contact"/>
+            <xs:element name="ContactMedium" type="contactMedium"/>
+            <xs:element name="Customer" type="customer"/>
+            <xs:element name="CustomerAccount" type="customerAccount"/>
+            <xs:element name="CustomerAccountContact" type="customerAccountContact"/>
+            <xs:element name="CustomerAccountProductInvolvement"
+                type="customerAccountProductInvolvement"/>
+            <xs:element name="CustomerAccountTaxExemption" type="customerAccountTaxExemption"/>
+            <xs:element name="CustomerBillSpec" type="customerBillSpec"/>
+            <xs:element name="CustomerBillingCycleSpecification"
+                type="customerBillingCycleSpecification"/>
+            <xs:element name="CustomerFacingService" type="customerFacingService"/>
+            <xs:element name="CustomerSegment" type="customerSegment"/>
+            <xs:element name="EmailContact" type="emailContact"/>
+            <xs:element name="FaxNumber" type="faxNumber"/>
+            <xs:element name="FundsTransfer" type="fundsTransfer"/>
+            <xs:element name="GeographicPlace" type="geographicPlace"/>
+            <xs:element name="GeographicSite" type="geographicSite"/>
+            <xs:element name="Individual" type="individual"/>
+            <xs:element name="IndividualName" type="individualName"/>
+            <xs:element name="Link" type="link"/>
+            <xs:element name="Money" type="money"/>
+            <xs:element name="Organization" type="organization"/>
+            <xs:element name="OrganizationName" type="organizationName"/>
+            <xs:element name="Party" type="party"/>
+            <xs:element name="PartyName" type="partyName"/>
+            <xs:element name="PartyRole" type="partyRole"/>
+            <xs:element name="PaymentCard" type="paymentCard"/>
+            <xs:element name="PaymentMethod" type="paymentMethod"/>
+            <xs:element name="PaymentPlan" type="paymentPlan"/>
+            <xs:element name="Place" type="place"/>
+            <xs:element name="PostalContact" type="postalContact"/>
+            <xs:element name="Preference" type="preference"/>
+            <xs:element name="PreferenceCategory" type="preferenceCategory"/>
+            <xs:element name="Presentation" type="presentation"/>
+            <xs:element name="PresentationCategory" type="presentationCategory"/>
+            <xs:element name="Product" type="product"/>
+            <xs:element name="ProductBundle" type="productBundle"/>
+            <xs:element name="ProductInvolvementRole" type="productInvolvementRole"/>
+            <xs:element name="ProductOffering" type="productOffering"/>
+            <xs:element name="ProductOfferingInterface" type="productOfferingInterface"/>
+            <xs:element name="ProductPrice" type="productPrice"/>
+            <xs:element name="ProductRelationship" type="productRelationship"/>
+            <xs:element name="ProductSpecCharacteristic" type="productSpecCharacteristic"/>
+            <xs:element name="ProductSpecCharacteristicValue" type="productSpecCharacteristicValue"/>
+            <xs:element name="ProductSpecification" type="productSpecification"/>
+            <xs:element name="ProductSpecificationType" type="productSpecificationType"/>
+            <xs:element name="PropertyAddress" type="propertyAddress"/>
+            <xs:element name="Service" type="service"/>
+            <xs:element name="ServiceInterface" type="serviceInterface"/>
+            <xs:element name="ServiceSite" type="serviceSite"/>
+            <xs:element name="SystemContact" type="systemContact"/>
+            <xs:element name="TelephoneNumber" type="telephoneNumber"/>
+            <xs:element name="TimePeriod" type="timePeriod"/>
+            <xs:element name="TokenizedPaymentCard" type="tokenizedPaymentCard"/>
+            <xs:element name="TokenizedThirdParty" type="tokenizedThirdParty"/>
+            <xs:element name="UrbanPropertyAddress" type="urbanPropertyAddress"/>
+            <xs:element name="User" type="user"/>
+            <xs:element name="UserAccountAssignment" type="userAccountAssignment"/>
+            <xs:complexType name="paymentPlan">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="customerAccounts"
+                        nillable="true" type="customerAccount"/>
+                    <xs:element minOccurs="0" name="ID" type="xs:string"/>
+                    <xs:element minOccurs="0" name="link" type="link"/>
+                    <xs:element minOccurs="0" name="paymentLimit" type="money"/>
+                    <xs:element minOccurs="0" name="paymentMethod" type="paymentMethod"/>
+                    <xs:element minOccurs="0" name="paymentPlanType" type="paymentPlanType"/>
+                    <xs:element name="priority" type="xs:int"/>
+                    <xs:element name="status" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="customerAccount">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="receiving_services_at"
+                        nillable="true" type="serviceSite"/>
+                    <xs:element minOccurs="0" name="accountFinancialStatus"
+                        type="accountFinancialStatus"/>
+                    <xs:element minOccurs="0" name="accountId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="accountStatus" type="accountStatus"/>
+                    <xs:element minOccurs="0" name="accountType" type="accountType"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="assignedUsers"
+                        nillable="true" type="userAccountAssignment"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="contacts" nillable="true"
+                        type="contact"/>
+                    <xs:element name="creditLimit" type="xs:long"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="customerAccountContacts"
+                        nillable="true" type="customerAccountContact"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0"
+                        name="customerAccountProductInvolvements" nillable="true"
+                        type="customerAccountProductInvolvement"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0"
+                        name="customerAccountTaxExemptions" nillable="true"
+                        type="customerAccountTaxExemption"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="customerBillSpecs"
+                        nillable="true" type="customerBillSpec"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="customers" nillable="true"
+                        type="customer"/>
+                    <xs:element minOccurs="0" name="link" type="link"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="paymentMethods"
+                        nillable="true" type="paymentMethod"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="paymentPlans"
+                        nillable="true" type="paymentPlan"/>
+                    <xs:element minOccurs="0" name="pin" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="serviceSite">
+                <xs:complexContent>
+                    <xs:extension base="geographicSite">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="associated_with"
+                                nillable="true" type="customerAccountContact"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="a_location_where_service_is_provided_for" nillable="true"
+                                type="customerAccount"/>
+                            <xs:element minOccurs="0" name="located_at" type="urbanPropertyAddress"
+                            />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="geographicSite">
+                <xs:complexContent>
+                    <xs:extension base="geographicPlace">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="name" type="xs:string"/>
+                            <xs:element minOccurs="0" name="code" type="xs:string"/>
+                            <xs:element minOccurs="0" name="status" type="xs:string"/>
+                            <xs:element minOccurs="0" name="description" type="xs:string"/>
+                            <xs:element minOccurs="0" name="clliCode" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="geographicPlace">
+                <xs:complexContent>
+                    <xs:extension base="place">
+                        <xs:sequence/>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="place">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="placeId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="customerAccountContact">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="used_for" nillable="true"
+                        type="serviceSite"/>
+                    <xs:element minOccurs="0" name="accountContactId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contact" type="contact"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="contactMediums"
+                        nillable="true" type="contactMedium"/>
+                    <xs:element minOccurs="0" name="contactType" type="customerAccountContactType"/>
+                    <xs:element minOccurs="0" name="customerAcccount" type="customerAccount"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="contact">
+                <xs:complexContent>
+                    <xs:extension base="partyRole">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="contactMedium" type="contactMedium"/>
+                            <xs:element minOccurs="0" name="contactType" type="xs:string"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="customerAccountContacts" nillable="true"
+                                type="customerAccountContact"/>
+                            <xs:element minOccurs="0" name="name" type="xs:string"/>
+                            <xs:element minOccurs="0" name="partyDetails" type="party"/>
+                            <xs:element minOccurs="0" name="partyRoleId" type="xs:string"/>
+                            <xs:element minOccurs="0" name="status" type="xs:string"/>
+                            <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="partyRole">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="contactMedium">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="telephoneNumbers"
+                        nillable="true" type="telephoneNumber"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="faxNumbers"
+                        nillable="true" type="faxNumber"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="emailContacts"
+                        nillable="true" type="emailContact"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="postalContacts"
+                        nillable="true" type="postalContact"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="systemContacts"
+                        nillable="true" type="systemContact"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="telephoneNumber">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="extension" type="xs:string"/>
+                    <xs:element minOccurs="0" name="link" type="link"/>
+                    <xs:element minOccurs="0" name="number" type="xs:string"/>
+                    <xs:element minOccurs="0" name="type" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="link">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="href" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rel" type="xs:string"/>
+                    <xs:element minOccurs="0" name="title" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="timePeriod">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="startDateTime" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="endDateTime" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="faxNumber">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="link" type="link"/>
+                    <xs:element minOccurs="0" name="number" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="emailContact">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="EMailAddress" type="xs:string"/>
+                    <xs:element minOccurs="0" name="EMailClassification" type="xs:string"/>
+                    <xs:element minOccurs="0" name="link" type="link"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="postalContact">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="additionalDeliveryDetail" type="xs:string"/>
+                    <xs:element minOccurs="0" name="link" type="link"/>
+                    <xs:element minOccurs="0" name="propertyAddress" type="propertyAddress"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="propertyAddress">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="country" type="xs:string"/>
+                    <xs:element minOccurs="0" name="formattedAddressLine1" type="xs:string"/>
+                    <xs:element minOccurs="0" name="formattedAddressLine2" type="xs:string"/>
+                    <xs:element minOccurs="0" name="link" type="link"/>
+                    <xs:element minOccurs="0" name="locality" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="postalContacts"
+                        nillable="true" type="postalContact"/>
+                    <xs:element minOccurs="0" name="postalcode" type="xs:string"/>
+                    <xs:element minOccurs="0" name="postcodeExtension" type="xs:string"/>
+                    <xs:element minOccurs="0" name="state_province" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="systemContact">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="contactNotificationID" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contactNotificationMethod" type="xs:string"/>
+                    <xs:element minOccurs="0" name="link" type="link"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="party">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="individual">
+                <xs:complexContent>
+                    <xs:extension base="party">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="aliveDuring" type="timePeriod"/>
+                            <xs:element minOccurs="0" name="disabilities" type="xs:string"/>
+                            <xs:element minOccurs="0" name="gender" type="xs:string"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="individualNames"
+                                nillable="true" type="individualName"/>
+                            <xs:element minOccurs="0" name="link" type="link"/>
+                            <xs:element minOccurs="0" name="maritalStatus" type="xs:string"/>
+                            <xs:element minOccurs="0" name="nationality" type="xs:string"/>
+                            <xs:element minOccurs="0" name="partyId" type="xs:string"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="partyRoles"
+                                nillable="true" type="partyRole"/>
+                            <xs:element minOccurs="0" name="placeOfBirth" type="xs:string"/>
+                            <xs:element minOccurs="0" name="skills" type="xs:string"/>
+                            <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="individualName">
+                <xs:complexContent>
+                    <xs:extension base="partyName">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="aristocraticTitle" type="xs:string"/>
+                            <xs:element minOccurs="0" name="familyGeneration" type="xs:string"/>
+                            <xs:element minOccurs="0" name="familyNamePrefix" type="xs:string"/>
+                            <xs:element minOccurs="0" name="familyNames" type="xs:string"/>
+                            <xs:element minOccurs="0" name="formOfAddress" type="xs:string"/>
+                            <xs:element minOccurs="0" name="formattedName" type="xs:string"/>
+                            <xs:element minOccurs="0" name="generation" type="xs:string"/>
+                            <xs:element minOccurs="0" name="givenNames" type="xs:string"/>
+                            <xs:element minOccurs="0" name="individual" type="individual"/>
+                            <xs:element minOccurs="0" name="legalName" type="xs:string"/>
+                            <xs:element minOccurs="0" name="middleNames" type="xs:string"/>
+                            <xs:element minOccurs="0" name="preferredGivenName" type="xs:string"/>
+                            <xs:element minOccurs="0" name="qualifications" type="xs:string"/>
+                            <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="partyName">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="organizationName">
+                <xs:complexContent>
+                    <xs:extension base="partyName">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="nameType" type="xs:string"/>
+                            <xs:element minOccurs="0" name="organization" type="organization"/>
+                            <xs:element minOccurs="0" name="organizationName" type="xs:string"/>
+                            <xs:element minOccurs="0" name="tradingName" type="xs:string"/>
+                            <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="organization">
+                <xs:complexContent>
+                    <xs:extension base="party">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="contacts"
+                                nillable="true" type="contact"/>
+                            <xs:element minOccurs="0" name="existsDuring" type="timePeriod"/>
+                            <xs:element minOccurs="0" name="isLegalEntity" type="xs:string"/>
+                            <xs:element minOccurs="0" name="link" type="link"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="organizationNames"
+                                nillable="true" type="organizationName"/>
+                            <xs:element minOccurs="0" name="partyId" type="xs:string"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="partyRoles"
+                                nillable="true" type="partyRole"/>
+                            <xs:element minOccurs="0" name="type" type="xs:string"/>
+                            <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="user">
+                <xs:complexContent>
+                    <xs:extension base="partyRole">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="individual" type="individual"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="assignedCustomerAccounts" nillable="true"
+                                type="userAccountAssignment"/>
+                            <xs:element minOccurs="0" name="link" type="link"/>
+                            <xs:element minOccurs="0" name="name" type="xs:string"/>
+                            <xs:element minOccurs="0" name="partyRoleId" type="xs:string"/>
+                            <xs:element minOccurs="0" name="status" type="xs:string"/>
+                            <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="userAccountAssignment">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="customerAccount" type="customerAccount"/>
+                    <xs:element minOccurs="0" name="user" type="user"/>
+                    <xs:element minOccurs="0" name="userRoleType" type="userAccountRoleType"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="customer">
+                <xs:complexContent>
+                    <xs:extension base="partyRole">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="customerAccounts"
+                                nillable="true" type="customerAccount"/>
+                            <xs:element minOccurs="0" name="customerId" type="xs:string"/>
+                            <xs:element name="customerRank" type="xs:long"/>
+                            <xs:element minOccurs="0" name="customerSegment" type="customerSegment"/>
+                            <xs:element minOccurs="0" name="link" type="link"/>
+                            <xs:element minOccurs="0" name="name" type="xs:string"/>
+                            <xs:element minOccurs="0" name="partyDetails" type="party"/>
+                            <xs:element minOccurs="0" name="partyRoleId" type="xs:string"/>
+                            <xs:element minOccurs="0" name="status" type="xs:string"/>
+                            <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="customerSegment">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="customers" nillable="true"
+                        type="customer"/>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="urbanPropertyAddress">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="formattedAddressLine1" type="xs:string"/>
+                    <xs:element minOccurs="0" name="formattedAddressLine2" type="xs:string"/>
+                    <xs:element minOccurs="0" name="streetNrFirstPrefix" type="xs:string"/>
+                    <xs:element minOccurs="0" name="streetNrFirst" type="xs:string"/>
+                    <xs:element minOccurs="0" name="streetNrFirstSuffix" type="xs:string"/>
+                    <xs:element minOccurs="0" name="streetNrLastPrefix" type="xs:string"/>
+                    <xs:element minOccurs="0" name="streetNrLast" type="xs:string"/>
+                    <xs:element minOccurs="0" name="streetNrLastSuffix" type="xs:string"/>
+                    <xs:element minOccurs="0" name="streetNamePrefix" type="xs:string"/>
+                    <xs:element minOccurs="0" name="streetName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="streetType" type="xs:string"/>
+                    <xs:element minOccurs="0" name="streetSuffix" type="xs:string"/>
+                    <xs:element minOccurs="0" name="streetNameSuffix" type="xs:string"/>
+                    <xs:element minOccurs="0" name="locality" type="xs:string"/>
+                    <xs:element minOccurs="0" name="postcode" type="xs:string"/>
+                    <xs:element minOccurs="0" name="assigned_to" type="serviceSite"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="customerAccountProductInvolvement">
+                <xs:complexContent>
+                    <xs:extension base="productInvolvementRole">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="customerAccount" type="customerAccount"
+                            />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="productInvolvementRole">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="productInvolvementRole" type="xs:string"/>
+                    <xs:element minOccurs="0" name="productInvolvementRoleId" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="products" nillable="true"
+                        type="product"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="product">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="part_of" type="productBundle"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="characteristicValues"
+                        nillable="true" type="characteristicValue"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="customerFacingServices"
+                        nillable="true" type="customerFacingService"/>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element minOccurs="0" name="link" type="link"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                    <xs:element minOccurs="0" name="productId" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="productInvolvementRoles"
+                        nillable="true" type="productInvolvementRole"/>
+                    <xs:element minOccurs="0" name="productOffering" type="productOffering"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="productPrices"
+                        nillable="true" type="productPrice"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="productRelationships"
+                        nillable="true" type="productRelationship"/>
+                    <xs:element minOccurs="0" name="productSerialNumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="productSpecification"
+                        type="productSpecification"/>
+                    <xs:element minOccurs="0" name="productStatus" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="productBundle">
+                <xs:complexContent>
+                    <xs:extension base="product">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="products"
+                                nillable="true" type="product"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="characteristicValue">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="product" type="product"/>
+                    <xs:element minOccurs="0" name="productCharValueId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="productCharacteristicValue"
+                        type="productSpecCharacteristicValue"/>
+                    <xs:element minOccurs="0" name="productSpecCharacteristic"
+                        type="productSpecCharacteristic"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                    <xs:element minOccurs="0" name="value" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="productSpecCharacteristicValue">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="characteristicValues"
+                        nillable="true" type="characteristicValue"/>
+                    <xs:element name="default_27" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="productSpecCharValueId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rangeInterval" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unitOfMeasure" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                    <xs:element minOccurs="0" name="value" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valueFrom" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valueTo" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valueType" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="productSpecCharacteristic">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="characteristicValues"
+                        nillable="true" type="characteristicValue"/>
+                    <xs:element minOccurs="0" name="derivationFormula" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element name="extensible" type="xs:boolean"/>
+                    <xs:element name="maxCardinality" type="xs:int"/>
+                    <xs:element name="minCardinality" type="xs:int"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                    <xs:element minOccurs="0" name="productSpecCharId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unique" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                    <xs:element minOccurs="0" name="valueType" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="customerFacingService">
+                <xs:complexContent>
+                    <xs:extension base="service">
+                        <xs:sequence>
+                            <xs:element name="cfsStatus" type="xs:int"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="products"
+                                nillable="true" type="product"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="service">
+                <xs:complexContent>
+                    <xs:extension base="serviceInterface">
+                        <xs:sequence>
+                            <xs:element name="hasStarted" type="xs:boolean"/>
+                            <xs:element name="isFCCReportable" type="xs:boolean"/>
+                            <xs:element name="isMandatory" type="xs:boolean"/>
+                            <xs:element name="isServiceEnabled" type="xs:boolean"/>
+                            <xs:element name="isStateful" type="xs:boolean"/>
+                            <xs:element name="isTSP" type="xs:boolean"/>
+                            <xs:element minOccurs="0" name="serviceId" type="xs:string"/>
+                            <xs:element name="startMode" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="serviceInterface">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="productOffering">
+                <xs:complexContent>
+                    <xs:extension base="productOfferingInterface">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="description" type="xs:string"/>
+                            <xs:element minOccurs="0" name="name" type="xs:string"/>
+                            <xs:element minOccurs="0" name="productOfferingId" type="xs:string"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="products"
+                                nillable="true" type="product"/>
+                            <xs:element minOccurs="0" name="status" type="xs:string"/>
+                            <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="productOfferingInterface">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="bundledProductOfferings"
+                        nillable="true" type="bundledProductOffering"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="bundledProductOffering">
+                <xs:complexContent>
+                    <xs:extension base="productOfferingInterface">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="productOfferings"
+                                nillable="true" type="productOfferingInterface"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="productPrice">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="compositeProdPrice" type="compositeProdPrice"/>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                    <xs:element minOccurs="0" name="product" type="product"/>
+                    <xs:element minOccurs="0" name="productPriceId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="compositeProdPrice">
+                <xs:complexContent>
+                    <xs:extension base="productPrice">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="productPrices"
+                                nillable="true" type="productPrice"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="productRelationship">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="product" type="product"/>
+                    <xs:element minOccurs="0" name="relationshipType" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="productSpecification">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="brand" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0"
+                        name="compositeProductSpecifications" nillable="true"
+                        type="compositeProductSpecification"/>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lifecycleStatus" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lineOfBusiness" type="productLineOfBusiness"/>
+                    <xs:element minOccurs="0" name="link" type="link"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="presentations"
+                        nillable="true" type="presentation"/>
+                    <xs:element minOccurs="0" name="productNumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="productSpecificationId" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="productSpecificationTypes"
+                        nillable="true" type="productSpecificationType"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="products" nillable="true"
+                        type="product"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="compositeProductSpecification">
+                <xs:complexContent>
+                    <xs:extension base="productSpecification">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="productSpecifications" nillable="true"
+                                type="productSpecification"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="presentation">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="presentationCategories"
+                        nillable="true" type="presentationCategory"/>
+                    <xs:element minOccurs="0" name="presentationContentLocation" type="xs:string"/>
+                    <xs:element minOccurs="0" name="presentationId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="presentationName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="presentationType" type="presentationType"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="productSpecifications"
+                        nillable="true" type="productSpecification"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="presentationCategory">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="presentationCategoryName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="presentationCategoryType"
+                        type="presentationCategoryType"/>
+                    <xs:element minOccurs="0" name="presentationDescription" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="presentations"
+                        nillable="true" type="presentation"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="productSpecificationType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="productSpecifications"
+                        nillable="true" type="productSpecification"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="customerAccountTaxExemption">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="certificateNumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="customerAccount" type="customerAccount"/>
+                    <xs:element minOccurs="0" name="issuingJurisdiction" type="xs:string"/>
+                    <xs:element minOccurs="0" name="taxExemptionCategory"
+                        type="taxExemptionCategory"/>
+                    <xs:element minOccurs="0" name="taxType" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="customerBillSpec">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="customerAccount" type="customerAccount"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0"
+                        name="customerBillingCycleSpecifications" nillable="true"
+                        type="customerBillingCycleSpecification"/>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="customerBillingCycleSpecification">
+                <xs:sequence>
+                    <xs:element name="billingDateShift" type="xs:int"/>
+                    <xs:element minOccurs="0" name="billingPeriod" type="billingPeriod"/>
+                    <xs:element name="chargeDateOffset" type="xs:int"/>
+                    <xs:element name="creditDateOffset" type="xs:int"/>
+                    <xs:element minOccurs="0" name="customerBillCycleSpecId" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="customerBillSpecs"
+                        nillable="true" type="customerBillSpec"/>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element name="mailingDateOffset" type="xs:int"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                    <xs:element name="paymentDueDateOffset" type="xs:int"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="billingPeriod">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billingPeriodId" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0"
+                        name="customerBillingCycleSpecifications" nillable="true"
+                        type="customerBillingCycleSpecification"/>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="paymentMethod">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billingContacts" type="contactMedium"/>
+                    <xs:element minOccurs="0" name="customerAccount" type="customerAccount"/>
+                    <xs:element minOccurs="0" name="paymentDescription" type="xs:string"/>
+                    <xs:element minOccurs="0" name="paymentMethodId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="paymentMethodName" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="paymentPlan"
+                        nillable="true" type="paymentPlan"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="paymentCard">
+                <xs:complexContent>
+                    <xs:extension base="paymentMethod">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="cardVerificationCode" type="xs:string"/>
+                            <xs:element minOccurs="0" name="expirationDate" type="xs:dateTime"/>
+                            <xs:element minOccurs="0" name="link" type="link"/>
+                            <xs:element minOccurs="0" name="nameOnCard" type="xs:string"/>
+                            <xs:element minOccurs="0" name="paymentCardNumber" type="xs:string"/>
+                            <xs:element minOccurs="0" name="paymentCardType" type="paymentCardType"
+                            />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="tokenizedPaymentCard">
+                <xs:complexContent>
+                    <xs:extension base="paymentMethod">
+                        <xs:sequence>
+                            <xs:element name="creditCardLastThreeDigits" type="xs:int"/>
+                            <xs:element minOccurs="0" name="expirationDate" type="xs:dateTime"/>
+                            <xs:element minOccurs="0" name="paymentCardToken" type="xs:string"/>
+                            <xs:element minOccurs="0" name="paymentCardType" type="paymentCardType"
+                            />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="tokenizedThirdParty">
+                <xs:complexContent>
+                    <xs:extension base="paymentMethod">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="merchantId" type="xs:string"/>
+                            <xs:element minOccurs="0" name="thirdPartyId" type="xs:string"/>
+                            <xs:element minOccurs="0" name="thirdPartyToken" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="fundsTransfer">
+                <xs:complexContent>
+                    <xs:extension base="paymentMethod">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="accountType" type="bankAccountType"/>
+                            <xs:element minOccurs="0" name="bankAccountNumber" type="xs:string"/>
+                            <xs:element minOccurs="0" name="bankRoutingNumber" type="xs:string"/>
+                            <xs:element minOccurs="0" name="link" type="link"/>
+                            <xs:element minOccurs="0" name="transitNumber" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="money">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="amount" type="xs:string"/>
+                    <xs:element minOccurs="0" name="units" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="preference">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="preferences"
+                        nillable="true" type="preference"/>
+                    <xs:element name="characteristicSequence" type="xs:int"/>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element name="isSet" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="link" type="link"/>
+                    <xs:element minOccurs="0" name="preferenceCategory" type="preferenceCategory"/>
+                    <xs:element minOccurs="0" name="preferenceId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preferenceName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rangeInterval" type="xs:string"/>
+                    <xs:element minOccurs="0" name="specCharacteristicDescription" type="xs:string"/>
+                    <xs:element minOccurs="0" name="specCharacteristicName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unitOfMeasure" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validFor" type="timePeriod"/>
+                    <xs:element minOccurs="0" name="value" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valueType" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="preferenceCategory">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preferenceCategoryId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preferenceCategoryName" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="userAccountRoleType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="PrimaryOwner"/>
+                    <xs:enumeration value="UnrestrictedSecondary"/>
+                    <xs:enumeration value="RestrictedSecondary"/>
+                    <xs:enumeration value="NonAuthorizedSecondary"/>
+                    <xs:enumeration value="Delegate"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="customerAccountContactType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Primary"/>
+                    <xs:enumeration value="Authorized"/>
+                    <xs:enumeration value="Billing"/>
+                    <xs:enumeration value="Technical"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="accountFinancialStatus">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Current"/>
+                    <xs:enumeration value="Due"/>
+                    <xs:enumeration value="InArrears"/>
+                    <xs:enumeration value="Delinquent"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="accountStatus">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Active"/>
+                    <xs:enumeration value="Suspended"/>
+                    <xs:enumeration value="Inactive"/>
+                    <xs:enumeration value="Closed"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="accountType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Individual"/>
+                    <xs:enumeration value="Joint"/>
+                    <xs:enumeration value="Other"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="productLineOfBusiness">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Video"/>
+                    <xs:enumeration value="HighSpeedData"/>
+                    <xs:enumeration value="Voice"/>
+                    <xs:enumeration value="Security"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="presentationCategoryType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Web"/>
+                    <xs:enumeration value="Print"/>
+                    <xs:enumeration value="Script"/>
+                    <xs:enumeration value="Bill"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="presentationType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Description"/>
+                    <xs:enumeration value="Icon"/>
+                    <xs:enumeration value="Image"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="taxExemptionCategory">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="FirstNationOnReserve"/>
+                    <xs:enumeration value="FirstNationOffReserve"/>
+                    <xs:enumeration value="Consulate"/>
+                    <xs:enumeration value="StateProvincialGovernment"/>
+                    <xs:enumeration value="LocalGovernment"/>
+                    <xs:enumeration value="FederalGovernmant"/>
+                    <xs:enumeration value="Reseller"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="paymentCardType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Credit"/>
+                    <xs:enumeration value="Debit"/>
+                    <xs:enumeration value="GiftCard"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="bankAccountType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Savings"/>
+                    <xs:enumeration value="Checking"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="paymentPlanType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Preauthorized"/>
+                    <xs:enumeration value="AdHoc"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:schema>
+    </grammars>
+    <resources base="http://cable-api.herokuapp.com/">
+        <resource path="/customeraccount">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/preference">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="PUT">
+                    <request>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/telephonenumber">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="PUT">
+                    <request>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/emailcontact">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="PUT">
+                    <request>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/faxnumber">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="PUT">
+                    <request>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/postalcontact">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="PUT">
+                    <request>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/systemcontact">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="PUT">
+                    <request>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/customer">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/user">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/paymentmethod">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/individual">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <method name="DELETE">
+                    <request>
+                        <representation mediaType="application/json">
+                            <param name="request" style="plain" type="xs:string"/>
+                        </representation>
+                        <representation mediaType="application/xml">
+                            <param name="request" style="plain" type="xs:string"/>
+                        </representation>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/organization">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <method name="DELETE">
+                    <request>
+                        <representation mediaType="application/json">
+                            <param name="request" style="plain" type="xs:string"/>
+                        </representation>
+                        <representation mediaType="application/xml">
+                            <param name="request" style="plain" type="xs:string"/>
+                        </representation>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <representation mediaType="application/json">
+                            <param name="request" style="plain" type="xs:string"/>
+                        </representation>
+                        <representation mediaType="application/xml">
+                            <param name="request" style="plain" type="xs:string"/>
+                        </representation>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/paymentplan">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/contact">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/customerbillspec">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/product">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="PUT">
+                    <request>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/productspecification">
+            <method name="POST">
+                <request>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </request>
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/{id}">
+                <param name="id" style="template" type="xs:string"/>
+                <method name="DELETE">
+                    <request/>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="GET">
+                    <request>
+                        <param name="view" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method name="PUT">
+                    <request>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+    </resources>
+</application>

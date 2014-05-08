@@ -1,0 +1,492 @@
+Apr 23, 2014 3:02:40 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/skulasekar/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Apr 23, 2014 3:02:40 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Apr 23, 2014 3:02:40 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Apr 23, 2014 3:02:40 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 498 ms
+Apr 23, 2014 3:02:40 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Apr 23, 2014 3:02:40 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.53
+Apr 23, 2014 3:02:40 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /Users/skulasekar/development/apache-tomcat-7.0.53/webapps/cable-api.war
+Apr 23, 2014 3:02:40 PM org.apache.catalina.loader.WebappClassLoader validateJarFile
+INFO: validateJarFile(/Users/skulasekar/development/apache-tomcat-7.0.53/webapps/cable-api/WEB-INF/lib/geronimo-servlet_3.0_spec-1.0.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+Apr 23, 2014 3:02:40 PM org.apache.catalina.loader.WebappClassLoader validateJarFile
+INFO: validateJarFile(/Users/skulasekar/development/apache-tomcat-7.0.53/webapps/cable-api/WEB-INF/lib/servlet-api-6.0.37.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+Apr 23, 2014 3:02:43 PM org.springframework.web.context.ContextLoader initWebApplicationContext
+INFO: Root WebApplicationContext: initialization started
+Apr 23, 2014 3:02:43 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing Root WebApplicationContext: startup date [Wed Apr 23 15:02:43 EDT 2014]; root of context hierarchy
+Apr 23, 2014 3:02:43 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+Apr 23, 2014 3:02:43 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+Apr 23, 2014 3:02:43 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+Apr 23, 2014 3:02:43 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@726b8972: defining beans [cxf,org.apache.cxf.bus.spring.BusWiringBeanFactoryPostProcessor,org.apache.cxf.bus.spring.Jsr250BeanPostProcessor,org.apache.cxf.bus.spring.BusExtensionPostProcessor,org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor#0,exceptionMapper,customerAccountService,preferenceService,telephoneNumberService,emailContactService,faxNumberService,postalContactService,systemContactService,customerService,userService,individualService,organizationService,paymentPlanService,contactService,customerBillSpecService,productService,productSpecificationService,prodPriceChargeService,fundsTransferService,paymentCardService,tokenizedPaymentCardService,tokenizedThirdPartyService,propertyAddressService,bundledProductOfferingService,customerfacingService,americanPropertyAddressService,serviceSiteService,geographicAddressService,productOfferingService,customerBillService,documentService,propertyService,featureService,deviceService,cableServiceArea,messageResponse,restResponse,cors-filter,jsonNamespaceMap,customJsonProvider,jaxbElementProvider,APIServer]; root of factory hierarchy
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerAccountImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PreferenceImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.TelephoneNumberImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.EmailContactImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.FaxNumberImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PostalContactImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.SystemContactImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.UserImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.IndividualImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.OrganizationImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PaymentPlanImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ContactImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerBillSpecImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProductImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProductSpecificationImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProdPriceChargeImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.FundsTransferImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PaymentCardImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.TokenizedPaymentCardImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.TokenizedThirdPartyImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PropertyAddressImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.BundledProductOfferingImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerFacingImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.AmericanPropertyAddressImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ServiceSiteImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.GeographicAddressImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProductOfferingImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerBillFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:43 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.DocumentFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:44 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PropertyFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:44 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.FeatureFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:44 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.DeviceFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:44 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CableServiceAreaFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:44 PM org.apache.cxf.endpoint.ServerImpl initDestination
+INFO: Setting the server's publish address to be /
+Apr 23, 2014 3:02:44 PM org.springframework.web.context.ContextLoader initWebApplicationContext
+INFO: Root WebApplicationContext: initialization completed in 1332 ms
+Apr 23, 2014 3:02:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/skulasekar/development/apache-tomcat-7.0.53/webapps/docs
+Apr 23, 2014 3:02:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/skulasekar/development/apache-tomcat-7.0.53/webapps/examples
+Apr 23, 2014 3:02:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/skulasekar/development/apache-tomcat-7.0.53/webapps/host-manager
+Apr 23, 2014 3:02:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/skulasekar/development/apache-tomcat-7.0.53/webapps/manager
+Apr 23, 2014 3:02:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/skulasekar/development/apache-tomcat-7.0.53/webapps/ROOT
+Apr 23, 2014 3:02:44 PM org.apache.catalina.loader.WebappClassLoader validateJarFile
+INFO: validateJarFile(/Users/skulasekar/development/apache-tomcat-7.0.53/webapps/ROOT/WEB-INF/lib/geronimo-servlet_3.0_spec-1.0.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+Apr 23, 2014 3:02:44 PM org.apache.catalina.loader.WebappClassLoader validateJarFile
+INFO: validateJarFile(/Users/skulasekar/development/apache-tomcat-7.0.53/webapps/ROOT/WEB-INF/lib/servlet-api-6.0.37.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+Apr 23, 2014 3:02:46 PM org.springframework.web.context.ContextLoader initWebApplicationContext
+INFO: Root WebApplicationContext: initialization started
+Apr 23, 2014 3:02:46 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing Root WebApplicationContext: startup date [Wed Apr 23 15:02:46 EDT 2014]; root of context hierarchy
+Apr 23, 2014 3:02:46 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+Apr 23, 2014 3:02:46 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+Apr 23, 2014 3:02:46 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+Apr 23, 2014 3:02:46 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@702cb3ab: defining beans [cxf,org.apache.cxf.bus.spring.BusWiringBeanFactoryPostProcessor,org.apache.cxf.bus.spring.Jsr250BeanPostProcessor,org.apache.cxf.bus.spring.BusExtensionPostProcessor,org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor#0,exceptionMapper,customerAccountService,preferenceService,telephoneNumberService,emailContactService,faxNumberService,postalContactService,systemContactService,customerService,userService,individualService,organizationService,paymentPlanService,contactService,customerBillSpecService,productService,productSpecificationService,prodPriceChargeService,fundsTransferService,paymentCardService,tokenizedPaymentCardService,tokenizedThirdPartyService,propertyAddressService,bundledProductOfferingService,customerfacingService,americanPropertyAddressService,serviceSiteService,geographicAddressService,productOfferingService,customerBillService,documentService,propertyService,featureService,deviceService,cableServiceArea,messageResponse,restResponse,cors-filter,jsonNamespaceMap,customJsonProvider,jaxbElementProvider,APIServer]; root of factory hierarchy
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerAccountImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PreferenceImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.TelephoneNumberImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.EmailContactImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.FaxNumberImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PostalContactImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.SystemContactImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.UserImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.IndividualImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.OrganizationImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PaymentPlanImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ContactImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerBillSpecImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProductImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProductSpecificationImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProdPriceChargeImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.FundsTransferImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PaymentCardImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.TokenizedPaymentCardImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.TokenizedThirdPartyImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PropertyAddressImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.BundledProductOfferingImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerFacingImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.AmericanPropertyAddressImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ServiceSiteImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.GeographicAddressImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProductOfferingImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerBillFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.DocumentFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PropertyFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.FeatureFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.DeviceFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CableServiceAreaFacadeImpl/jaxwsContext
+Apr 23, 2014 3:02:46 PM org.apache.cxf.endpoint.ServerImpl initDestination
+INFO: Setting the server's publish address to be /
+Apr 23, 2014 3:02:46 PM org.springframework.web.context.ContextLoader initWebApplicationContext
+INFO: Root WebApplicationContext: initialization completed in 922 ms
+Apr 23, 2014 3:02:46 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Apr 23, 2014 3:02:46 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Apr 23, 2014 3:02:46 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 6357 ms
+Apr 23, 2014 3:03:16 PM org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor processRequest
+WARNING: No root resource matching request path /cable-api/maps.html has been found, Relative Path: /maps.html. Please enable FINE/TRACE log level for more details.
+Apr 23, 2014 3:03:16 PM com.cablelabs.wasapi.exceptions.ScExceptionMapper toResponse
+SEVERE: Uncaught exception
+javax.ws.rs.NotFoundException
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.processRequest(JAXRSInInterceptor.java:167)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.handleMessage(JAXRSInInterceptor.java:97)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:271)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:239)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:218)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:163)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:137)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:158)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:243)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:168)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:620)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:219)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+
+Apr 23, 2014 3:03:16 PM com.cablelabs.wasapi.exceptions.ScExceptionMapper ExceptionMessage
+INFO: Passed Media Type: [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+Apr 23, 2014 3:03:16 PM com.cablelabs.wasapi.exceptions.ScExceptionMapper ExceptionMessage
+INFO: Using Media Type: application/xml
+Apr 23, 2014 3:05:07 PM org.apache.catalina.startup.HostConfig undeploy
+INFO: Undeploying context [/cable-api]
+Apr 23, 2014 3:05:07 PM org.springframework.context.support.AbstractApplicationContext doClose
+INFO: Closing Root WebApplicationContext: startup date [Wed Apr 23 15:02:43 EDT 2014]; root of context hierarchy
+Apr 23, 2014 3:05:07 PM org.springframework.context.support.AbstractApplicationContext doClose
+SEVERE: Exception thrown from ApplicationListener handling ContextClosedEvent
+java.lang.NoClassDefFoundError: org/apache/cxf/transport/MultipleEndpointObserver
+	at org.apache.cxf.endpoint.ServerImpl.stop(ServerImpl.java:170)
+	at org.apache.cxf.endpoint.ServerImpl.destroy(ServerImpl.java:181)
+	at org.apache.cxf.bus.managers.ServerRegistryImpl.preShutdown(ServerRegistryImpl.java:90)
+	at org.apache.cxf.bus.managers.CXFBusLifeCycleManager.preShutdown(CXFBusLifeCycleManager.java:95)
+	at org.apache.cxf.bus.managers.CXFBusLifeCycleManager.postShutdown(CXFBusLifeCycleManager.java:102)
+	at org.apache.cxf.bus.spring.SpringBus.onApplicationEvent(SpringBus.java:124)
+	at org.apache.cxf.bus.spring.SpringBus$1.onApplicationEvent(SpringBus.java:75)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:97)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:301)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:983)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:946)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:374)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:78)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5014)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5659)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+	at org.apache.catalina.core.ContainerBase.removeChild(ContainerBase.java:1028)
+	at org.apache.catalina.startup.HostConfig.undeploy(HostConfig.java:1478)
+	at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1406)
+	at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1626)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:328)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1374)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1530)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1540)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1519)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.ClassNotFoundException: org.apache.cxf.transport.MultipleEndpointObserver
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1720)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1571)
+	... 28 more
+
+Apr 23, 2014 3:05:07 PM org.springframework.beans.factory.support.DefaultSingletonBeanRegistry destroySingletons
+INFO: Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@726b8972: defining beans [cxf,org.apache.cxf.bus.spring.BusWiringBeanFactoryPostProcessor,org.apache.cxf.bus.spring.Jsr250BeanPostProcessor,org.apache.cxf.bus.spring.BusExtensionPostProcessor,org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor#0,exceptionMapper,customerAccountService,preferenceService,telephoneNumberService,emailContactService,faxNumberService,postalContactService,systemContactService,customerService,userService,individualService,organizationService,paymentPlanService,contactService,customerBillSpecService,productService,productSpecificationService,prodPriceChargeService,fundsTransferService,paymentCardService,tokenizedPaymentCardService,tokenizedThirdPartyService,propertyAddressService,bundledProductOfferingService,customerfacingService,americanPropertyAddressService,serviceSiteService,geographicAddressService,productOfferingService,customerBillService,documentService,propertyService,featureService,deviceService,cableServiceArea,messageResponse,restResponse,cors-filter,jsonNamespaceMap,customJsonProvider,jaxbElementProvider,APIServer]; root of factory hierarchy
+Apr 23, 2014 3:05:07 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/cable-api] created a ThreadLocal with key of type [com.sun.xml.bind.v2.runtime.Coordinator$1] (value [com.sun.xml.bind.v2.runtime.Coordinator$1@50ab2fdc]) and a value of type [java.lang.Object[]] (value [[Ljava.lang.Object;@16d33de4]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Apr 23, 2014 3:05:07 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /Users/skulasekar/development/apache-tomcat-7.0.53/webapps/cable-api.war
+Apr 23, 2014 3:05:07 PM org.apache.catalina.loader.WebappClassLoader validateJarFile
+INFO: validateJarFile(/Users/skulasekar/development/apache-tomcat-7.0.53/webapps/cable-api/WEB-INF/lib/geronimo-servlet_3.0_spec-1.0.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+Apr 23, 2014 3:05:07 PM org.apache.catalina.loader.WebappClassLoader validateJarFile
+INFO: validateJarFile(/Users/skulasekar/development/apache-tomcat-7.0.53/webapps/cable-api/WEB-INF/lib/servlet-api-6.0.37.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+Apr 23, 2014 3:05:09 PM org.springframework.web.context.ContextLoader initWebApplicationContext
+INFO: Root WebApplicationContext: initialization started
+Apr 23, 2014 3:05:09 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing Root WebApplicationContext: startup date [Wed Apr 23 15:05:09 EDT 2014]; root of context hierarchy
+Apr 23, 2014 3:05:09 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+Apr 23, 2014 3:05:09 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+Apr 23, 2014 3:05:09 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+Apr 23, 2014 3:05:09 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@bf77ccf: defining beans [cxf,org.apache.cxf.bus.spring.BusWiringBeanFactoryPostProcessor,org.apache.cxf.bus.spring.Jsr250BeanPostProcessor,org.apache.cxf.bus.spring.BusExtensionPostProcessor,org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor#0,exceptionMapper,customerAccountService,preferenceService,telephoneNumberService,emailContactService,faxNumberService,postalContactService,systemContactService,customerService,userService,individualService,organizationService,paymentPlanService,contactService,customerBillSpecService,productService,productSpecificationService,prodPriceChargeService,fundsTransferService,paymentCardService,tokenizedPaymentCardService,tokenizedThirdPartyService,propertyAddressService,bundledProductOfferingService,customerfacingService,americanPropertyAddressService,serviceSiteService,geographicAddressService,productOfferingService,customerBillService,documentService,propertyService,featureService,deviceService,cableServiceArea,messageResponse,restResponse,cors-filter,jsonNamespaceMap,customJsonProvider,jaxbElementProvider,APIServer]; root of factory hierarchy
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerAccountImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PreferenceImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.TelephoneNumberImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.EmailContactImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.FaxNumberImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PostalContactImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.SystemContactImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.UserImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.IndividualImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.OrganizationImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PaymentPlanImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ContactImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerBillSpecImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProductImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProductSpecificationImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProdPriceChargeImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.FundsTransferImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PaymentCardImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.TokenizedPaymentCardImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.TokenizedThirdPartyImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PropertyAddressImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.BundledProductOfferingImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerFacingImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.AmericanPropertyAddressImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ServiceSiteImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.GeographicAddressImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.ProductOfferingImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CustomerBillFacadeImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.DocumentFacadeImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.PropertyFacadeImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.FeatureFacadeImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.DeviceFacadeImpl/jaxwsContext
+Apr 23, 2014 3:05:09 PM org.apache.cxf.common.injection.ResourceInjector visitField
+INFO: failed to resolve resource com.cablelabs.cableapi.facades.CableServiceAreaFacadeImpl/jaxwsContext
+Apr 23, 2014 3:05:10 PM org.apache.cxf.endpoint.ServerImpl initDestination
+INFO: Setting the server's publish address to be /
+Apr 23, 2014 3:05:10 PM org.springframework.web.context.ContextLoader initWebApplicationContext
+INFO: Root WebApplicationContext: initialization completed in 940 ms
+Apr 23, 2014 3:05:11 PM org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor processRequest
+WARNING: No root resource matching request path /cable-api/maps has been found, Relative Path: /maps. Please enable FINE/TRACE log level for more details.
+Apr 23, 2014 3:05:11 PM com.cablelabs.wasapi.exceptions.ScExceptionMapper toResponse
+SEVERE: Uncaught exception
+javax.ws.rs.NotFoundException
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.processRequest(JAXRSInInterceptor.java:167)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.handleMessage(JAXRSInInterceptor.java:97)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:271)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:239)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:218)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:163)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:137)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:158)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:243)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:168)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:620)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:219)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+
+Apr 23, 2014 3:05:12 PM com.cablelabs.wasapi.exceptions.ScExceptionMapper ExceptionMessage
+INFO: Passed Media Type: [application/html]
+Apr 23, 2014 3:05:12 PM com.cablelabs.wasapi.exceptions.ScExceptionMapper ExceptionMessage
+INFO: Using Media Type: application/xml
+Apr 23, 2014 3:06:07 PM org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor processRequest
+WARNING: No root resource matching request path /cable-api/maps has been found, Relative Path: /maps. Please enable FINE/TRACE log level for more details.
+Apr 23, 2014 3:06:07 PM com.cablelabs.wasapi.exceptions.ScExceptionMapper toResponse
+SEVERE: Uncaught exception
+javax.ws.rs.NotFoundException
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.processRequest(JAXRSInInterceptor.java:167)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.handleMessage(JAXRSInInterceptor.java:97)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:271)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:239)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:218)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:163)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:137)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:158)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:243)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:168)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:620)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:219)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+
+Apr 23, 2014 3:06:07 PM com.cablelabs.wasapi.exceptions.ScExceptionMapper ExceptionMessage
+INFO: Passed Media Type: [application/html]
+Apr 23, 2014 3:06:07 PM com.cablelabs.wasapi.exceptions.ScExceptionMapper ExceptionMessage
+INFO: Using Media Type: application/xml
+Apr 23, 2014 3:07:55 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Apr 23, 2014 3:07:55 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Apr 23, 2014 3:07:55 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Apr 23, 2014 3:07:55 PM org.springframework.context.support.AbstractApplicationContext doClose
+INFO: Closing Root WebApplicationContext: startup date [Wed Apr 23 15:02:46 EDT 2014]; root of context hierarchy
+Apr 23, 2014 3:07:55 PM org.springframework.beans.factory.support.DefaultSingletonBeanRegistry destroySingletons
+INFO: Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@702cb3ab: defining beans [cxf,org.apache.cxf.bus.spring.BusWiringBeanFactoryPostProcessor,org.apache.cxf.bus.spring.Jsr250BeanPostProcessor,org.apache.cxf.bus.spring.BusExtensionPostProcessor,org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor#0,exceptionMapper,customerAccountService,preferenceService,telephoneNumberService,emailContactService,faxNumberService,postalContactService,systemContactService,customerService,userService,individualService,organizationService,paymentPlanService,contactService,customerBillSpecService,productService,productSpecificationService,prodPriceChargeService,fundsTransferService,paymentCardService,tokenizedPaymentCardService,tokenizedThirdPartyService,propertyAddressService,bundledProductOfferingService,customerfacingService,americanPropertyAddressService,serviceSiteService,geographicAddressService,productOfferingService,customerBillService,documentService,propertyService,featureService,deviceService,cableServiceArea,messageResponse,restResponse,cors-filter,jsonNamespaceMap,customJsonProvider,jaxbElementProvider,APIServer]; root of factory hierarchy
+Apr 23, 2014 3:07:55 PM org.springframework.context.support.AbstractApplicationContext doClose
+INFO: Closing Root WebApplicationContext: startup date [Wed Apr 23 15:05:09 EDT 2014]; root of context hierarchy
+Apr 23, 2014 3:07:55 PM org.springframework.beans.factory.support.DefaultSingletonBeanRegistry destroySingletons
+INFO: Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@bf77ccf: defining beans [cxf,org.apache.cxf.bus.spring.BusWiringBeanFactoryPostProcessor,org.apache.cxf.bus.spring.Jsr250BeanPostProcessor,org.apache.cxf.bus.spring.BusExtensionPostProcessor,org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor#0,exceptionMapper,customerAccountService,preferenceService,telephoneNumberService,emailContactService,faxNumberService,postalContactService,systemContactService,customerService,userService,individualService,organizationService,paymentPlanService,contactService,customerBillSpecService,productService,productSpecificationService,prodPriceChargeService,fundsTransferService,paymentCardService,tokenizedPaymentCardService,tokenizedThirdPartyService,propertyAddressService,bundledProductOfferingService,customerfacingService,americanPropertyAddressService,serviceSiteService,geographicAddressService,productOfferingService,customerBillService,documentService,propertyService,featureService,deviceService,cableServiceArea,messageResponse,restResponse,cors-filter,jsonNamespaceMap,customJsonProvider,jaxbElementProvider,APIServer]; root of factory hierarchy
+Apr 23, 2014 3:07:55 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/cable-api] created a ThreadLocal with key of type [com.sun.xml.bind.v2.runtime.Coordinator$1] (value [com.sun.xml.bind.v2.runtime.Coordinator$1@33c55d10]) and a value of type [java.lang.Object[]] (value [[Ljava.lang.Object;@6260dffd]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Apr 23, 2014 3:07:55 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/cable-api] created a ThreadLocal with key of type [com.sun.xml.bind.v2.runtime.Coordinator$1] (value [com.sun.xml.bind.v2.runtime.Coordinator$1@33c55d10]) and a value of type [java.lang.Object[]] (value [[Ljava.lang.Object;@46118d80]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Apr 23, 2014 3:07:55 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Apr 23, 2014 3:07:55 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Apr 23, 2014 3:07:55 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Apr 23, 2014 3:07:55 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
